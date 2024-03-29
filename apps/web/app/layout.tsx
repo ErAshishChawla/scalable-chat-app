@@ -2,6 +2,10 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import { Toaster } from "sonner";
+
+import Providers from "../providers";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,8 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="dark">
+      <body className={inter.className} suppressHydrationWarning={true}>
+        <Providers>
+          <main className="flex flex-col w-screen h-screen bg-black">
+            {children}
+          </main>
+        </Providers>
+        <Toaster />
+      </body>
     </html>
   );
 }
