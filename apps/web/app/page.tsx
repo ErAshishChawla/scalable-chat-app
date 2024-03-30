@@ -6,7 +6,7 @@ import { paths } from "../helpers/path-helpers";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 justify-center items-center">
+    <div className="flex flex-col flex-1 justify-center items-center p-8">
       <div className="flex flex-col gap-4 justify-center items-center">
         <h1 className="text-6xl capitalize font-bold text-center">
           Chat app project
